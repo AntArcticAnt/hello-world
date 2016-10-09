@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<!-- 
+protocol
+ -->
+	<!-- 
+	技术分解:
+
+一.ICON图标
+	1.使用 base64 格式制作ICON||优势是什么||base64格式是什么||为什么写备注||格式:    background:url(data:image/png;base64,{img_data})
+	2.使用 css3 格式制作ICON||优势是什么||常用属性:border-radius//box-shadow//transform
+	3.什么地方用css3,什么地方用base64  .
+
+二.HTML5中的新的 API   (DOM.本地数据缓存,跟硬件相关的特性(google地理位置,打开页面性能的监控))
+	DOM操作 querySelector
+	localStorage||postMessage(跨域通信)
+	eg: 	
+	window.performance 性能监控,测试    .timing     (属性-对象)        传统方式  new Date().getTime();
+	window.localStorage.setItem()                                      取代 :cookie;
+	
+
+	1.Web Workers API  (异步操作 )                              以前 定时器setTimeout(function(){console.log(1)},0);   console.log(2)   //2  1  
+	setTimeout开辟了一个线程,把需要异步的操作放到了代码的后面
+
+	var myWorker= new Worker("my_task.js");   //必须在同级文件夹内,同域文件
+	不是所有代码都能放在my_task.js里面的,所有和 UI 相关的代码都是不能放在这个文件里面的.
+	myWorker.onmessage=function(oEvent){console.log()};     
+
+
+	2.可以跨域的AJAX请求;    (iframe,jsonp)
+
+	传统方式:          open(method,url,async) 规定请求的类型、URL 以及是否异步处理请求。
+
+						method：请求的类型；GET 或 POST 
+						url：文件在服务器上的位置 (必须是和当前域同域的)
+						async：true（异步）或 false（同步） 
+
+
+
+	https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5  
+	https:协议  
+	developer.mozilla.org/  父域
+	zh-CN/docs/Web/Guide/HTML/HTML5         
+	
+	同域:1.相同协议下   2.域名相同   3.父域(域名的第一层)   ||(一级域,二级域,三级域)
+	父域不相同,完成不能AJAX异步跨域;
+
+	header('Access-Control-Allow-Origin:*');
+
+
+	3.    contenteditable='true';
+
+
+三.流程:
+
+1.开发流程
+				||交互解读(交互图+需求分解:用户+需求)  
+				||设计解读(能做到哪种程度)  
+				||开发25%  
+				||测试
+
+2.交互确定:移动端开发技术选型 >>>  
+							||轻量化
+							||快速开发
+							||维护简单
+							||高性能
+
+3.用原生还是框架??  
+				如果项目复杂,选择框架
+				这个阅读器选择原生
+
+4.模块化拆分:  
+			CSS   JS  HTML5  
+			(阅读器的开发没有把JS单抽成独立文件,而是放到HTML文件中) >>>优点:文件加载时候,减少请求,性能方面加载速度提升.
+
+5.目录结构的划分和基础文件准备说明: 
+								||引进reset,zepto框架
+								||数据做base64加密+jsonp做跨域请求
+								||zepto给jq两个插件提供使用一个支持
+								||data独立的跑起来,暂时没有后端数据
+
+
+6.页面结构开发过程:
+
+					||页面结构的搭建>>>来源于设计稿  (暂时把完成效果当成设计图)
+					||页面结构分析:分几部分:    1.[title+content+翻页]   +    2.(唤出边栏+滚动时+...)
+					||边栏和主要内容是脱离的(被唤出的),所以可以用绝对定位
+
+7.过程分析:
+一>>>
+			1.引入  >>> reset.css||防止被抓的base64和跨域的jsonp||两个文件的应用平台zepto.js
+			2.写head>>> 字符编码||视窗比例||文本数字处理
+			3.写初始基本页面结构>>>包裹层||title||content||翻页
+			4.写style样式
+
+
+
+二>>>      1.边栏和导航的效果||边栏的结构放在哪??
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	 -->
+</body>
+<script type="text/javascript">
+	
+
+
+
+	// 不懂得地方:
+    1.   
+ 		html{
+			width:100%;	
+			height:100%;
+			overflow-x: hidden;
+		}
+		body{
+			text-align: left;
+			width:100%;
+			overflow: hidden; 
+			/* 防止横向移出,但是出现了纵向的滚动条消失,在html标签解决这个问题*/
+			background:#e9dfc7;
+		}
+
+
+
+
+</script>
+</html>
